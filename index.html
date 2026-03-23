@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Vokabel-Chatbot</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 50px;
+      background-color: #f0f4f8;
+    }
+
+    input {
+      padding: 10px;
+      width: 250px;
+    }
+
+    button {
+      padding: 10px;
+      margin-left: 10px;
+    }
+
+    #antwort {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>📚 Englisch Vokabel-Chatbot</h1>
+  <p>Gib ein Wort ein (Englisch oder Deutsch)</p>
+
+  <input type="text" id="frage" placeholder="z. B. desert oder Wüste">
+  <button onclick="antwortGeben()">Senden</button>
+
+  <p id="antwort">Hier erscheint die Antwort</p>
+
+  <script>
+    function antwortGeben() {
+      let eingabe = document.getElementById("frage").value.toLowerCase();
+      let antwort = "";
+
+      if (eingabe.includes("desert") || eingabe.includes("wüste")) {
+        antwort = "desert = Wüste";
+      }
+
+      else if (eingabe.includes("population") || eingabe.includes("bevölkerung")) {
+        antwort = "population = Bevölkerung";
+      }
+
+      else if (eingabe.includes("coast") || eingabe.includes("küste")) {
+        antwort = "coast = Küste";
+      }
+
+      else if (eingabe.includes("valley") || eingabe.includes("tal")) {
+        antwort = "valley = Tal";
+      }
+
+      else if (eingabe.includes("ocean") || eingabe.includes("ozean")) {
+        antwort = "ocean = Ozean";
+      }
+
+      else if (eingabe.includes("image") || eingabe.includes("bild")) {
+        antwort = "image = Bild / Abbild";
+      }
+
+      else if (eingabe.includes("single parent") || eingabe.includes("alleinerziehend")) {
+        antwort = "a single parent = ein(e) Alleinerziehende(r)";
+      }
+
+      else if (eingabe.includes("part-time job") || eingabe.includes("halbtagsjob")) {
+        antwort = "part-time job = Halbtagsjob";
+      }
+
+      else if (eingabe.includes("perhaps") || eingabe.includes("vielleicht")) {
+        antwort = "perhaps = vielleicht";
+      }
+
+      else if (eingabe.includes("sea lion") || eingabe.includes("seelöwe")) {
+        antwort = "sea lion = Seelöwe";
+      }
+
+      else if (eingabe.includes("route") || eingabe.includes("strecke")) {
+        antwort = "route = Strecke / Route";
+      }
+
+      else if (eingabe.includes("sidewalk") || eingabe.includes("gehweg")) {
+        antwort = "sidewalk (AE) = Gehweg / Bürgersteig";
+      }
+
+      else if (eingabe.includes("wave") || eingabe.includes("winken")) {
+        antwort = "to wave = winken";
+      }
+
+      else if (eingabe.includes("grow")) {
+        antwort = "grow – grew – grown = wachsen / anbauen";
+      }
+
+      else {
+        antwort = "🤔 Dieses Wort kenne ich noch nicht.";
+      }
+
+      document.getElementById("antwort").innerText = antwort;
+    }
+  </script>
+
+</body>
+</html>
